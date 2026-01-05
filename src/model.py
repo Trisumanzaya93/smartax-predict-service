@@ -49,6 +49,6 @@ print("✅ MODEL DISIMPAN")
 # ======================
 for i in range(N_CLUSTERS):
     print(f"\n=== CLUSTER {i} ===")
-    samples = df[df["cluster"] == i]["Permasalahan Wajib Pajak"].head(5)
+    samples = df[df["cluster"] == i]["Permasalahan Wajib Pajak"]
     for s in samples:
         print("-", s)
