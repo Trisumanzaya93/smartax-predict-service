@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from pathlib import Path
 import joblib
 from pydantic import BaseModel, Field
 from typing import List
@@ -25,8 +26,9 @@ class BatchRequest(BaseModel):
 
 app = FastAPI()
 
-vectorizer = joblib.load("../model/tfidf.pkl")
-kmeans = joblib.load("../model/kmeans.pkl")
+BASE_DIR = Path(__file__).resolve().parent.parent
+vectorizer = joblib.load(BASE_DIR / "model" / "tfidf.pkl")
+kmeans = joblib.load(BASE_DIR / "model" / "kmeans.pkl")
 
 @app.post("/predict")
 def predict(item: Item):
