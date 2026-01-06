@@ -2,7 +2,7 @@ import pandas as pd
 import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
-from preprocess import preprocess_text
+from src.preprocess import preprocess_text
 
 # ======================
 # 1. LOAD DATA

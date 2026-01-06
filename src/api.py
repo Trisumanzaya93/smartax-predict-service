@@ -2,7 +2,7 @@ from fastapi import FastAPI
 import joblib
 from pydantic import BaseModel, Field
 from typing import List
-from preprocess import preprocess_text
+from src.preprocess import preprocess_text
 
 class Item(BaseModel):
     text: str = Field(
